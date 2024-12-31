@@ -7,7 +7,13 @@ function App() {
   const [start, setStart] = useState(false);
 
   return (
-    <>{start ? <GamePage /> : <StartPage startGame={() => setStart(true)} />}</>
+    <>
+      {start ? (
+        <GamePage resetGame={() => setStart(false)} />
+      ) : (
+        <StartPage startGame={() => setStart(true)} />
+      )}
+    </>
   );
 }
 
