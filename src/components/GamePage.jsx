@@ -82,38 +82,42 @@ function GamePage({ resetGame, difficulty }) {
   }
 
   return (
-    <div className="text-center p-4">
-      <h1 className="text-3xl font-bold mb-4">Guess the Flag</h1>
+    <div className="p-4">
+      <h1 className="text-3xl font-bold mb-4 text-center">Guess the Flag</h1>
       <div className="flex justify-between mb-4">
         <div>Score: {score}</div>
         <div>Best Score: {bestScore}</div>
         <div>Time Left: {timeLeft}s</div>
       </div>
-      <img
-        src={currentCountry.flags.png}
-        alt={`Flag of ${currentCountry.name.common}`}
-        className="mx-auto mb-4 w-48 h-32 object-cover"
-      />
-      <div className="grid grid-cols-2 gap-4">
-        {options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => handleAnswer(option)}
-            className={`p-2 rounded ${
-              selectedAnswer
-                ? option === currentCountry.name.common
-                  ? "bg-green-500"
-                  : "bg-red-500"
-                : "bg-blue-500 hover:bg-blue-600"
-            } text-white`}
-            disabled={selectedAnswer !== null}
-          >
-            {option}
-          </button>
-        ))}
+      <div className="flex flex-col md:flex-row items-center gap-8">
+        {/* Flag Image */}
+        <img
+          src={currentCountry.flags.png}
+          alt={`Flag of ${currentCountry.name.common}`}
+          className="w-64 h-48 object-cover rounded-lg shadow-lg"
+        />
+        {/* Options */}
+        <div className="flex flex-col gap-4">
+          {options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(option)}
+              className={`p-3 rounded-lg text-lg ${
+                selectedAnswer
+                  ? option === currentCountry.name.common
+                    ? "bg-green-500"
+                    : "bg-red-500"
+                  : "bg-blue-500 hover:bg-blue-600"
+              } text-white transition-all duration-200`}
+              disabled={selectedAnswer !== null}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
       </div>
       <button
-        className="mt-4 bg-red-950 text-white px-4 py-2 rounded"
+        className="mt-8 bg-red-950 text-white px-6 py-3 rounded-lg mx-auto block hover:bg-red-900 transition-all duration-200"
         onClick={resetGame}
       >
         Back to Start
