@@ -37,7 +37,7 @@ Earn points for correct guesses before the timer runs out.
 ## Deployment 🌐
 
 Deployed on Vercel:
-👉 Live Demo
+👉 Live Demo: https://odin-memory-gamma.vercel.app/
 
 API Usage 🌍
 Fetches flag and country data from the REST Countries API.
