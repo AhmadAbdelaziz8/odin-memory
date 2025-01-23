@@ -18,6 +18,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile-first responsive adjustments */
+.game-container {
+  @apply min-h-screen md:min-h-0; /* Full height on mobile */
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    @apply px-2; /* Reduce horizontal padding */
+  }
+
+  .flag-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Lighter shadow for mobile */
+  }
+
+  .score-display div {
+    @apply text-sm; /* Smaller score text */
+  }
+}
+
+/* Improve touch targets */
+button {
+  @apply min-h-[48px]; /* Minimum touch target size */
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,6 +55,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -73,5 +98,19 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Smooth transitions for form elements */
+select {
+  transition: all 0.3s ease;
+  -webkit-appearance: none; /* Remove default styling on iOS */
+}
+
+/* Gradient text fallback */
+@supports (-webkit-background-clip: text) {
+  .gradient-text {
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 }
