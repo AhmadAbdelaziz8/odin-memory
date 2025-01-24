@@ -58,6 +58,9 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 10px;
+  overflow: hidden;
+  @apply bg-gradient-to-tr from-black to-blue-950;
 }
 
 h1 {
