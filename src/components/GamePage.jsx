@@ -170,7 +170,7 @@ function GamePage({ resetGame, difficulty }) {
             <button
               key={index}
               onClick={() => handleAnswer(option)}
-              className={`p-3 md:p-4 text-base md:text-xl lg:text-2xl rounded-xl transition-all 
+              className={`p-3  text-base md:text-xl lg:text-2xl rounded-xl transition-all 
                 ${
                   selectedAnswer
                     ? option === currentCountry.name.common
@@ -189,9 +189,9 @@ function GamePage({ resetGame, difficulty }) {
         </div>
       </div>
   
-      {/* Back Button - Mobile Optimized */}
+      {/* Back Button  */}
       <button
-        className="mt-6 md:mt-10 bg-rose-900 text-white px-4 py-2 md:px-8 md:py-4 rounded-lg md:rounded-xl mx-auto block 
+        className=" mt-2 bg-rose-900 text-white px-3 py-3 rounded-lg md:rounded-xl mx-auto block 
         hover:bg-rose-800 transition-all duration-200 text-base md:text-lg 
         shadow-md hover:shadow-lg"
         onClick={resetGame}
